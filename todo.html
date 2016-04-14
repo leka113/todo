@@ -1,0 +1,70 @@
+<html lang="en" >
+<head>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
+   <link rel="stylesheet" href="css/style.css" type="text/css" />
+   <link rel="stylesheet" href="css/todo.css" type="text/css" />
+</head>
+<body ng-app="myApp" ng-cloak>
+  <!--
+    Your HTML content here
+  -->  
+  <div class="main" ng-controller="MainController">
+    <md-content class="md-padding" layout-gt-md="column">
+   <div layout="column" style="width:800px">
+    <div flex="grow">
+    <md-toolbar class="md-warn">
+      <div class="md-toolbar-tools">
+        <h2 class="md-flex">To-dos : {{todos.length}} tasks left</h2>
+      </div>
+    </md-toolbar></div>
+    <div flex="grow">
+      <ul ng-repeat="todo in todos">
+      <md-card>
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline done-{{todo.done}}">{{todo.text}}</span>
+            <span class="md-subhead done-{{todo.done}}">{{todo.detail}}</span>
+          </md-card-title-text>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+          <div flex-xs flex="auto">
+          </div>
+          <div flex-xs flex="10">
+          <md-checkbox ng-model="todo.done" aria-label="Checkbox 1">
+            Done
+          </md-checkbox>
+          </div>
+          
+        </md-card-actions>
+      </md-card>
+    </ul>
+    </div>
+    <div flex="grow">
+      <md-input-container class="md-block">
+        <label>New Task</label>
+        <input ng-model="formTodoText">
+      </md-input-container>
+      <md-input-container class="md-block">
+        <label>Tell me more details about the task</label>
+        <input ng-model="formTodoDetail">
+      </md-input-container>
+      <md-button class="md-raised md-primary" ng-click="addTodo()">Add</md-button>
+      <md-button class="md-raised md-warn" ng-click="showSimpleToast()">Clear completed</md-button>
+    
+    </div>
+  </md-content>
+  
+  
+  </div>
+  
+  <!-- Angular Material requires Angular.js Libraries -->
+    <script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/angular-aria/angular-aria.min.js"></script>
+	<script src="bower_components/angular-animate/angular-animate.min.js"></script>
+	<script src="bower_components/angular-material/angular-material.min.js"></script>	
+  <script src="bower_components/angular-messages/angular-messages.min.js"></script>	
+    <script src="js/controllers/todoController.js"></script>
+  
+</body>
+</html>

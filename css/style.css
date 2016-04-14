@@ -1,0 +1,30 @@
+HTMLJSCSS
+
+
+.md-button {
+  color : currentColor;
+}
+.md-button:not([disabled]):hover {
+  background-color: rgba(158, 158, 158, 0.2);
+}
+.md-button[disabled] {
+  color : rgba(0, 0, 0, 0.26);
+  background-color: transparent;
+}
+
+  .md-no-momentum.md-input-container:not(.md-input-invalid) > .email {
+    color: green; }
+  .md-no-momentum.md-input-container:not(.md-input-invalid) > .name {
+    color: dodgerblue; }
+  .md-no-momentum.md-input-container.md-input-invalid > .email,
+  .md-no-momentum.md-input-container.md-input-invalid > .name {
+    color: red; }
+
+.md-button {
+  margin-top: 16px;
+  margin-bottom: 16px; }
+  
+.md-no-momentum {
+  margin: 0px;
+  padding: 1px;
+}

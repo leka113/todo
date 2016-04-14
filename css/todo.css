@@ -1,0 +1,84 @@
+HTMLJSCSS
+
+
+.md-button {
+  color : currentColor;
+}
+.md-button:not([disabled]):hover {
+  background-color: rgba(158, 158, 158, 0.2);
+}
+.md-button[disabled] {
+  color : rgba(0, 0, 0, 0.26);
+  background-color: transparent;
+}
+
+  .md-no-momentum.md-input-container:not(.md-input-invalid) > .email {
+    color: green; }
+  .md-no-momentum.md-input-container:not(.md-input-invalid) > .name {
+    color: dodgerblue; }
+  .md-no-momentum.md-input-container.md-input-invalid > .email,
+  .md-no-momentum.md-input-container.md-input-invalid > .name {
+    color: red; }
+
+.md-button {
+  margin-top: 0px;
+  margin-bottom: 16px; }
+  
+.md-no-momentum {
+  margin: 0px;
+  padding: 1px;
+}
+
+.md-block {
+  margin-bottom: 0px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-bottom: 0px;
+}
+
+.md-headline {
+  margin-top: 0px;
+  padding-top: 0px;
+}
+
+
+.done-true {
+  text-decoration: line-through;
+  color: grey;
+}
+
+.md-divider {
+  margin-top: 0;
+  margin-bottom: 0; }
+  
+.md-2-line {
+  height: 20px;
+}
+
+.todo-box {
+  box-shadow: 0px 1px 1.5px 0px #656565;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+
+%content {
+  font-size: 32px;
+  text-align: center;
+  margin: 0 5px;
+}
+.bin {
+  @extend %content;
+ 
+}
+.item {
+  @extend %content;
+  transition: all 0.2s ease;
+}
+.drag {
+  opacity: 0.5;
+}
+.over {
+  background: grey;
+}

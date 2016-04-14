@@ -1,0 +1,94 @@
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
+   <link rel="stylesheet" href="css/style.css" type="text/css" />
+   <link rel="stylesheet" href="css/todo.css" type="text/css" />
+</head>
+<body ng-app="app">
+  <div class="main" ng-controller="MainController">
+      
+    <md-content class="md-padding" layout-gt-md="column">
+      <div layout="column" style="width:800px">
+        
+        <!--Toolbar-->
+        <div flex="nogrow">
+          <md-toolbar>
+            <div class="md-toolbar-tools">
+              <h2 class="md-flex">To-dos : {{todos.length}} tasks left</h2>
+            </div>
+          </md-toolbar></div>
+        
+        <!--Task form-->
+        <div flex="nogrow" class="todo-box">
+          <div flex="">
+          <md-input-container class="md-block">
+            <label>New Task</label>
+            <input ng-model="formTodoText">
+          </md-input-container>
+          <md-input-container class="md-block">
+            <label>Tell me more details about the task</label>
+            <input ng-model="formTodoDetail">
+          </md-input-container>
+          </div>
+          <div flex="" layout="row">
+          <md-button class="md-raised md-primary" layout-align="left center" ng-click="addTodo()">Add</md-button>
+          <md-button class="md-raised md-warn" layout-align="left center" ng-click="clearCompleted()">Clear completed</md-button>
+          </div>
+        </div>
+        
+        <!--List of tasks-->
+        <div class="todo-box" flex="nogrow">
+          <div flex-xs flex="auto"></div>
+          <div layout="row">
+            
+            <!--List of tasks TODO -->
+            <div flex="" droppable drop="handleDrop" id="binTodo" bin="todo">
+              <md-list ng-cloak>
+                <md-subheader class="md-no-sticky">Backlog</md-subheader>
+                <md-divider></md-divider>
+                <md-list-item ng-repeat="todo in todos" class="item" id="{{todo.bin}}{{todo.index}}" draggable >
+                  <p class="done-{{todo.done}}">Backlog-{{todo.index}}</p>
+                  <md-checkbox class="md-secondary" ng-model="todo.done">
+                 </md-list-item>
+                </md-list>
+            </div>
+            
+            
+            <!--List of tasks ONGOING -->
+            <div flex="" droppable drop="handleDrop" id="binOngoing" bin="ongoing">
+              <md-list ng-cloak>
+                <md-subheader class="md-no-sticky">Ongoing</md-subheader>
+                <md-divider></md-divider>
+                <md-list-item ng-repeat="todo in todoOngoing" class="item" id="{{todo.bin}}{{todo.index}}" draggable >
+                  <p class="done-{{todo.done}}">Ongoing-{{todo.index}}</p>
+                  <md-checkbox ng-model="todo.done" class="md-secondary">
+                </md-list-item>
+              </md-list>
+            </div>
+          </div>
+          
+        
+        </div>
+        
+        
+    </md-content>
+    
+    <div ng-controller="DragDropCtrl">
+        <div class="bin" droppable drop="handleDrop()"></div>
+        <div class="bin" droppable drop="handleDrop()">
+          <div class="item" id="item1" draggable></div>
+        </div>
+        
+    </div>
+  <!-- Angular Material requires Angular.js Libraries -->
+    <script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/angular-aria/angular-aria.min.js"></script>
+	<script src="bower_components/angular-animate/angular-animate.min.js"></script>
+	<script src="bower_components/angular-material/angular-material.min.js"></script>	
+  <script src="bower_components/angular-messages/angular-messages.min.js"></script>	
+  <script src="js/controllers/todoController2.js"></script>
+  <script src="js/directives/dragdrop.js"></script>
+  
+</body>
+</html>
