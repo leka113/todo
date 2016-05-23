@@ -86,29 +86,7 @@
 
           </div>
         </div>
-        <div flex="20"></div>
-        <div flex="20"></div>
-        <div flex="60">
-          <md-list ng-cloak>
-            <md-subheader class="md-no-sticky">Ongoing</md-subheader>
-            <md-divider></md-divider>
-            <md-list-item ng-repeat="todo in todos" ng-if="checkBin(todo,'ongoing')" class="item" id="{{todo.id}}" draggable >
-              <p class="done-{{todo.done}}">{{todo.id}}</p>
-             </md-list-item>
-            </md-list>
-        </div>
 
-        <div flex="20"></div>
-        <div flex="20"></div>
-        <div flex="60">
-          <md-list ng-cloak>
-            <md-subheader class="md-no-sticky">Todo</md-subheader>
-            <md-divider></md-divider>
-            <md-list-item ng-repeat="todo in todos" ng-if="checkBin(todo,'todo')" class="item" id="{{todo.id}}" draggable >
-              <p class="done-{{todo.done}}">{{todo.id}}</p>
-             </md-list-item>
-            </md-list>
-        </div>
 
     </md-content>
 
