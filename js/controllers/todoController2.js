@@ -30,7 +30,7 @@ app.controller('MainController', function($attrs, $scope, $mdToast, $mdDialog, $
     );
   };
 
-  $scope.todos = [{text:'Learn AngularJS', detail:'Make 1 course a day', done:false, bin:'todo',index:'1', id:'todo1'},{text:'Build an App',detail:'Try to build several apps in Angular JS', done:false, bin:'todo',index:'2', id:'todo2'},{text:'Learn CSS', detail:'Make 1 course a day', done:false, bin:'ongoing',index:'1', id:'ongoing1'},{text:'Learn AngularJS', detail:'Make 1 course a day', done:false, bin:'done',index:'1', id:'done1'}]
+  $scope.todos = [{text:'Learn AngularJS', detail:'Make 1 course a day', done:false, bin:'todo',index:'1', id:'todo1'},{text:'Build an App',detail:'Try to build several apps in Angular JS', done:false, bin:'todo',index:'2', id:'todo2'},{text:'Learn CSS', detail:'Make 1 course a day', done:false, bin:'ongoing',index:'1', id:'ongoing1'},{text:'Meet Applidiums CEO', detail:'Make 1 course a day', done:false, bin:'done',index:'1', id:'done1'}]
   $scope.addTodo = function () {
     var index = $scope.todos.length+1;
     var id = 'todo'+index;
@@ -41,6 +41,18 @@ app.controller('MainController', function($attrs, $scope, $mdToast, $mdDialog, $
   $scope.todoOngoing = [{text:'Learn HTML/CSS', detail:'Make 1 course a day', done:true, bin:'ongoing', index:'1', id:'ongoing1'},{text:'DragnDrop',detail:'Try to build several apps in Angular JS', done:false, bin:'ongoing', index:'2', id:'ongoing2'}]
   $scope.todoDone = [{text:'Learn HTML/CSS', detail:'Make 1 course a day', done:true, bin:'done', index:'1', id:'done1'},{text:'DragnDrop',detail:'Try to build several apps in Angular JS', done:false, bin:'done', index:'2', id:'done2'}]
 
+  $scope.getLength = function() {
+    var result = 0;
+    for (var i=0;i<$scope.todos.length;i++) {
+      if ($scope.todos[i].bin==='todo' || $scope.todos[i].bin==='ongoing' )
+        result++;
+        else {
+
+        }
+    }
+    return result;
+
+  }
 
   $scope.clearCompleted = function () {
     $scope.todos = $scope.todos.filter(function(todo){

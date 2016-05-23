@@ -47,6 +47,13 @@ HTMLJSCSS
   color: grey;
 }
 
+.todo-detail {
+  color: grey;
+}
+
+.divider-toolbar {
+background-color: white;}
+
 .md-divider {
   margin-top: 0;
   margin-bottom: 0; }
