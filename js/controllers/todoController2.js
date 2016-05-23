@@ -44,7 +44,11 @@ app.controller('MainController', function($attrs, $scope, $mdToast, $mdDialog, $
 
   $scope.clearCompleted = function () {
     $scope.todos = $scope.todos.filter(function(todo){
-        return !todo.done
+      if (todo.bin==='done')
+        return false ;
+        else {
+          return true;
+        }
     });
     $scope.showToastClear();
   };
